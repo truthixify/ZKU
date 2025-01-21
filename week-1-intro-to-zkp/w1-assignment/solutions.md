@@ -1,6 +1,7 @@
 # Solutions
 
 ## Part 1
+
 Q1: Explain in 2-4 sentences why SNARK requires a trusted setup while STARK doesn’t.
 
 A1: SNARKs require a trusted setup because they rely on pre-generated parameters used in their cryptographic construction which ensures efficiency and succinctness. If these parameters are compromised, the security of the entire system is at risk and so we must trust the party that started the setup ceremony to delete the secret parameters immediately. STARKs on the other hand avoid this need by using publicly verifiable hash functions, making their setup transparent, trustless and resistant to quantum computers.
@@ -10,6 +11,7 @@ Q2: Name two more differences between SNARK and STARK proofs.
 A2: SNARKs required a trusted setup while STARKs don't require a trrusted setup. SNARKs have very short proof size(succinct) which makes highly efficient on blockchains applications where storage is critical while STARKs have large proof size.
 
 ## Part 2
+
 Q2a: What does the circuit in HelloWorld.circom do?
 A2a: The circuit checks that c is the multiplication of a and b.
 
@@ -23,14 +25,14 @@ A2c: Phase 1 is the general purpose reusable parameters that are independent of 
 
 Q4a: With Plonk we can just use the powers of Tau generated in Phase and not have to contribute the second time.
 
-Q4b: 
+Q4b:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                       |    Groth16                 |   Plonk
+| Groth16 | Plonk
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-| Trusted Setup        |	Circuit-specific        | Universal and reusable          |
-| Representation	   |	R1CS                    | Polynomial constraint system    |
-| Proof Size           |	Smaller ~ 200 bytes 	| Slightly larger (few KB)        |
-| Efficiency           |	Faster proof generation | Slower proof generation         |
-| Flexibility          |	Less flexible           | Highly flexible                 |
-| Use Case             |	Fixed circuits          | Dynamic, evolving applications  |
+| Trusted Setup | Circuit-specific | Universal and reusable |
+| Representation | R1CS | Polynomial constraint system |
+| Proof Size | Smaller ~ 200 bytes | Slightly larger (few KB) |
+| Efficiency | Faster proof generation | Slower proof generation |
+| Flexibility | Less flexible | Highly flexible |
+| Use Case | Fixed circuits | Dynamic, evolving applications |
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

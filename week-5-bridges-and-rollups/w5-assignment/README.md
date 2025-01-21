@@ -1,11 +1,12 @@
 # W5 Assignment
 
 ## Section A: Theoretical Questions
+
 ### Part 1: Scalability
 
 The scalability trilemma is a well known problem in the blockchain space. Ethereum has decided to focus on providing decentralization and security, while leaving scalability to layer-2 solutions. These rollup applications (optimistic or zk) are usually referred to as scaling solutions and they can be built for other blockchains as well.
 
-1. Choose two specific  blockchain scaling solutions and compare their implementations regarding the different trade-offs they make.
+1. Choose two specific blockchain scaling solutions and compare their implementations regarding the different trade-offs they make.
 2. [ZkSync](https://zksync.io/) and [StarkNet](https://starkware.co/starknet/) are two of the most promising zkRollups currently available with differing strategies. Briefly explain the differentiations between the two rollups and your conclusion on which is more likely to win the zkRollup wars.
 
 NB: Most of these questions have no exact correct answer and grades will be awarded based on your depth of understanding of the question and ability to properly back your points.
