@@ -36,3 +36,8 @@ Q4b:
 | Flexibility | Less flexible | Highly flexible |
 | Use Case | Fixed circuits | Dynamic, evolving applications |
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Part 3
+Q1a: The number 32 stands for the number of bits the input has.
+
+Q1b: The possible outputs for LessThan are 0 and 1. when you compare one number with another and the output is zero, means its not less than the other otherwise it is 1.
