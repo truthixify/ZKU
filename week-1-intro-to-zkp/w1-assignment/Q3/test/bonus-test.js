@@ -43,7 +43,7 @@ describe("SystemOfEquations verifier test", function () {
   let verifier;
 
   beforeEach(async function () {
-    Verifier = await ethers.getContractFactory("SystemOfEquationsVerifier");
+    Verifier = await ethers.getContractFactory("../artifacts/contracts/SystemOfEquationsVerifier.sol:Groth16Verifier");
     verifier = await Verifier.deploy();
     await verifier.deployed();
   });
