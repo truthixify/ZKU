@@ -6,7 +6,7 @@ describe("Sum circuit", function () {
   let sumCircuit;
 
   before(async function () {
-    sumCircuit = await wasm_tester("sum/sum.circom");
+    sumCircuit = await wasm_tester("contracts/circuits/bonus.circom");
   });
 
   it("Should generate the witness successfully", async function () {
