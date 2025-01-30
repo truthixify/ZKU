@@ -22,11 +22,12 @@ describe("Mastermind Variation circuit test", function () {
     );
 
     const INPUT = {
-        pubGuess: ["70", "82", "69", "84"],
-        privSalt: "1234",
-        pubNumBull: "4",
-        pubNumCow: "0",
-        pubSolnHash: "1565709258951795423637241887950612550910289139104993260018598934344803482919",
+      pubGuess: ["70", "82", "69", "84"],
+      privSalt: "1234",
+      pubNumBull: "4",
+      pubNumCow: "0",
+      pubSolnHash:
+        "1565709258951795423637241887950612550910289139104993260018598934344803482919",
       privSoln: ["70", "82", "69", "84"],
     };
 
@@ -35,6 +36,13 @@ describe("Mastermind Variation circuit test", function () {
     // console.log(witness);
 
     assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
-    assert(Fr.eq(Fr.e(witness[1]), Fr.e("1565709258951795423637241887950612550910289139104993260018598934344803482919")));
+    assert(
+      Fr.eq(
+        Fr.e(witness[1]),
+        Fr.e(
+          "1565709258951795423637241887950612550910289139104993260018598934344803482919",
+        ),
+      ),
+    );
   });
 });

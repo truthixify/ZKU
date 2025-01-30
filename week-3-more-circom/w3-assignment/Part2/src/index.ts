@@ -1,5 +1,5 @@
-import assert from 'assert';
-import * as crypto from 'crypto';
+import * as assert from 'assert';
+import { randomBytes } from 'crypto';
 import * as ethers from 'ethers';
 import { buildBabyjub, buildMimc7, buildEddsa } from 'circomlibjs';
 
@@ -69,11 +69,15 @@ const bigInt2Buffer = (i: BigInt): Buffer => {
 // The pubkey is the first Pedersen base point from iden3's circomlib
 // See https://github.com/iden3/circomlib/blob/d5ed1c3ce4ca137a6b3ca48bec4ac12c1b38957a/src/pedersen_printbases.js
 const NOTHING_UP_MY_SLEEVE_PUBKEY: PubKey = [
-  bigInt2Buffer(
-    10457101036533406547632367118273992217979173478358440826365724437999023779287n,
+  new Uint8Array(
+    bigInt2Buffer(
+      10457101036533406547632367118273992217979173478358440826365724437999023779287n,
+    ),
   ),
-  bigInt2Buffer(
-    19824078218392094440610104313265183977899662750282163392862422243483260492317n,
+  new Uint8Array(
+    bigInt2Buffer(
+      19824078218392094440610104313265183977899662750282163392862422243483260492317n,
+    ),
   ),
 ];
 
@@ -239,6 +243,14 @@ const encrypt = async (
 ): Promise<Ciphertext> => {
   const mimc7 = await buildMimc7();
   // [assignment] generate the IV, use Mimc7 to hash the shared key with the IV, then encrypt the plain text
+  const iv = BigInt(randomBytes(32).toString('hex'));
+  const asciiValues = plaintext.map(c => BigInt(c));
+
+  const ciphertext = asciiValues.map(value =>
+    BigInt(mimc7.hash(value + iv, sharedKey).toString()),
+  );
+
+  return { iv, data: ciphertext };
 };
 
 /*
@@ -250,6 +262,7 @@ const decrypt = async (
   sharedKey: EcdhSharedKey,
 ): Promise<Plaintext> => {
   // [assignment] use Mimc7 to hash the shared key with the IV, then descrypt the ciphertext
+  // can we really invert an hash function?
 };
 
 export {

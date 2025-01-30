@@ -4,7 +4,7 @@ import {
   encrypt,
   genKeypair,
   genEcdhSharedKey,
-  EdDSA
+  EdDSA,
 } from '../index';
 
 describe('ECDH test', () => {
