@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+      "dev": "ts-node-dev generate_circuit_input.js"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.0.0",
+    "@types/node": "^17.0.34",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^1.1.8"
+  },
+  "dependencies": {
+    "circomlibjs": "^0.1.2",
+    "circomlib": "^2.0.3",
+    "snarkjs": "^0.4.16"
+  }
+}
